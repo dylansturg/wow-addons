@@ -1,0 +1,5 @@
+## Interface: 60100
+## Title: Hello, World!
+## Notes: An addon that doesn't do anything.
+HelloWorld.lua
+HelloWorld.xml
