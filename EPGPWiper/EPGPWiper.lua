@@ -8,14 +8,24 @@ SLASH_EPGPWIPER1 = '/epgpwipe';
 
 local function handler(msg, editbox)
   print("About to wipe your guild's EPGP settings... Hope that's what you wanted. :)");
+  local numTotalMembers = 0;
+  local numOnlineMembers = 0;
+  local numOnlineMaxLevelMembers = 0;
+
+  print("Checking guild stats...");
   numTotalMembers, numOnlineMaxLevelMembers, numOnlineMembers = GetNumGuildMembers();
+
+  print("Number of guild members: ");
+  print(numTotalMembers);
   
-  for i = 0, numTotalMembers, 1 do
+  for i = 1, numTotalMembers, 1 do
     name, rank, rankIndex, level, class, zone, note, 
       officernote, online, status, classFileName, 
       achievementPoints, achievementRank, isMobile = GetGuildRosterInfo(i);
     
-    print("Member " + name + "'s note: " + officernote);
+    print("Member " .. name .. "'s note: " .. officernote);
+
+    GuildRosterSetOfficerNote(i, "0,0");
     
   end
   
