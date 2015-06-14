@@ -7,7 +7,18 @@
 SLASH_EPGPWIPER1 = '/epgpwipe';
 
 local function handler(msg, editbox)
-  print("You invoked my slash command.  Awesome job.");
+  print("About to wipe your guild's EPGP settings... Hope that's what you wanted. :)");
+  numTotalMembers, numOnlineMaxLevelMembers, numOnlineMembers = GetNumGuildMembers();
+  
+  for i = 0, numTotalMembers, 1 do
+    name, rank, rankIndex, level, class, zone, note, 
+      officernote, online, status, classFileName, 
+      achievementPoints, achievementRank, isMobile = GetGuildRosterInfo(i);
+    
+    print("Member " + name + "'s note: " + officernote);
+    
+  end
+  
 end
 
 SlashCmdList["EPGPWIPER"] = handler;
