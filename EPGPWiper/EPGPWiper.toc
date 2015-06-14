@@ -1,0 +1,5 @@
+## Interface: 60100
+## Title: EPGP Wiper
+## Notes: Addon that will complete reset EPGP values for a guild.
+EPGPWiper.lua
+EPGPWiper.xml
